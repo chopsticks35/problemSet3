@@ -40,3 +40,56 @@ var dashInsert = function(num){
 }
 console.log(dashInsert(454793))
 
+//ceaser cipher two options #3
+
+//#1 as OOP
+//constructor
+var CaeserCipherEncrypter = function(originalMessage){
+    
+    this.shift = shift;
+    this.originalMessage = message;
+}
+
+//encryptPhrase function
+ var encryptPhrase = function(){
+     var encryptedMessage = 
+ }
+
+
+//prototype to call encrypt function
+CaeserCipher.prototype.encryptPhrase(shift){
+    this.shift = shift;
+};
+
+
+
+
+
+var caesarCipher2 = function(string, shift){
+	var newWord = '';
+	for(var i = 0; i < string.length; i++){
+		var num2 = shift
+		if(string[i].match(/[a-z]/)){
+			var newNum = string.charCodeAt(i) + shift;
+			while(newNum > 122){//loops back
+				newNum = (string.charCodeAt(i) - 26 )+ num2
+				num2-=26
+			}
+			var newLetter = String.fromCharCode(newNum);
+			newWord += newLetter
+		} else if (string[i].match(/[A-Z]/)){
+			var newNum = string.charCodeAt(i)+shift;
+			while(newNum > 90){
+				//loops back to A
+				newNum = string.charCodeAt(i)-26+num2
+				num2-=26
+			}
+			var newLetter = String.fromCharCode(newNum);
+			newWord += newLetter
+		}else {
+			newWord += str[i]
+		}
+	}
+	return newWord;
+}
+console.log(caesarCipher2('zebra',3))
